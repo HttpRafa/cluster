@@ -4,7 +4,7 @@ use anyhow::Result;
 use serde::{de::DeserializeOwned, Serialize};
 
 pub trait SaveToTomlFile: Serialize {
-    fn save_to_file(&self, path: &Path, create_parent: bool) -> Result<()> {
+    fn write(&self, path: &Path, create_parent: bool) -> Result<()> {
         if create_parent {
             if let Some(parent) = path.parent() {
                 fs::create_dir_all(parent)?;
@@ -16,7 +16,7 @@ pub trait SaveToTomlFile: Serialize {
 }
 
 pub trait LoadFromTomlFile: DeserializeOwned {
-    fn load_from_file(path: &Path) -> Result<Self> {
+    fn from_file(path: &Path) -> Result<Self> {
         let data = fs::read_to_string(path)?;
         let config = toml::from_str(&data)?;
         Ok(config)

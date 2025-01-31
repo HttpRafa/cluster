@@ -82,7 +82,7 @@ impl Templates {
             };
 
             let data_file = Storage::get_template_data_file(&name);
-            let template = match StoredTemplate::load_from_file(&data_file) {
+            let template = match StoredTemplate::from_file(&data_file) {
                 Ok(profile) => profile,
                 Err(error) => {
                     warn!(

@@ -1,4 +1,4 @@
-package cloudlet:driver;
+package cloudlet:plugin;
 
 // Types required for this protocol
 interface types {

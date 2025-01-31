@@ -68,7 +68,7 @@ impl Profiles {
                 None => continue,
             };
 
-            let profile = match StoredProfile::load_from_file(&path) {
+            let profile = match StoredProfile::from_file(&path) {
                 Ok(profile) => profile,
                 Err(error) => {
                     progress.warn(format!(
@@ -177,7 +177,7 @@ impl Profile {
             authorization: self.authorization.clone(),
             url: self.url.clone(),
         };
-        stored_profile.save_to_file(&Storage::get_profile_file(&self.id), true)
+        stored_profile.write(&Storage::get_profile_file(&self.id), true)
     }
 
     pub fn compute_id(name: &str) -> String {

@@ -8,8 +8,8 @@ members = [
     "controller",
 
     # Drivers
-    "drivers/pterodactyl",
-    "drivers/local",
+    "plugins/pterodactyl",
+    "plugins/local",
 
     # Clients
     "cli",

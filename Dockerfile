@@ -11,8 +11,8 @@ COPY . .
 # Install necessary build dependencies, including protobuf compiler
 RUN apk add --no-cache musl-dev openssl-dev protobuf-dev
 
-# Compile the controller with the wasm-drivers feature
-RUN cargo build -p controller --features wasm-drivers --release
+# Compile the controller with the wasm-plugins feature
+RUN cargo build -p controller --features wasm-plugins --release
 
 # Runtime stage: Use a minimal Alpine image
 FROM alpine:latest

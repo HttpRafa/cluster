@@ -21,7 +21,7 @@ inquire = "0.7.5"
 anyhow = "1.0.95"
 
 # Command line arguments
-clap = { version = "4.5.26", features = ["derive"] }
+clap = { version = "4.5.27", features = ["derive"] }
 
 # Configuration
 serde = { version = "1.0.217", features = ["derive"] }

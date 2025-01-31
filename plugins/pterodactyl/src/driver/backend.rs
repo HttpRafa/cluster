@@ -102,13 +102,13 @@ impl Backend {
     fn load_or_empty() -> Self {
         let path = Storage::get_backend_config_file();
         if path.exists() {
-            Self::load_from_file(&path).unwrap_or_else(|err| {
+            Self::from_file(&path).unwrap_or_else(|err| {
                 warn!("Failed to read backend configuration from file: {}", err);
                 Self::new_empty()
             })
         } else {
             let backend = Self::new_empty();
-            if let Err(error) = backend.save_to_file(&path, false) {
+            if let Err(error) = backend.write(&path, false) {
                 error!(
                     "Failed to save default backend configuration to file: {}",
                     &error

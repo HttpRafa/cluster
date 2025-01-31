@@ -27,13 +27,13 @@ impl Config {
     pub fn new_filled() -> Self {
         let path = Storage::get_primary_config_file();
         if path.exists() {
-            Self::load_from_file(&path).unwrap_or_else(|err| {
+            Self::from_file(&path).unwrap_or_else(|err| {
                 warn!("Failed to read configuration from file: {}", err);
                 Self::new_empty()
             })
         } else {
             let config = Self::new_empty();
-            if let Err(error) = config.save_to_file(&path, false) {
+            if let Err(error) = config.write(&path, false) {
                 error!("Failed to save default configuration to file: {}", &error);
             }
             config
