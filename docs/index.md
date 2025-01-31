@@ -9,7 +9,7 @@ This documentation is a work in progress. We apologize for any grammatical error
 The Atomic Cloud consists of two main components: the Controller and the CLI.
 
 ### Controller
-The [Controller](controller/installation/docker/) should be installed in an environment that can operate continuously, such as a Raspberry Pi or a cloud server. It is responsible for managing the core functionalities of the cloud system.
+The [Controller](usage/controller/index.md) should be installed in an environment that can operate continuously, such as a Raspberry Pi or a cloud server. It is responsible for managing the core functionalities of the cloud system.
 
 ### CLI
-The [CLI](cli/installation/) is a client application that allows you to interact with the Controller. It can be installed on your local computer, providing you with convenient access to manage the cloud system.
+The [CLI](usage/cli/index.md) is a client application that allows you to interact with the Controller. It can be installed on your local computer, providing you with convenient access to manage the cloud system.
